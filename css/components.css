@@ -298,7 +298,17 @@
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
+.project-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
 
+.project-link {
+  margin-top: auto;
+  font-weight: 600;
+  color: var(--accent);
+}
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -325,7 +335,15 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.03);
 }
+.contact-card-copy {
+  color: var(--muted);
+  margin: 0 0 0.9rem;
+}
 
+.inline-link {
+  color: var(--accent);
+  font-weight: 600;
+}
 .contact-list {
   display: grid;
   gap: 0.7rem;
