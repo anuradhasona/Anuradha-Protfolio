@@ -1,0 +1,75 @@
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: #040611;
+  transition: opacity 260ms ease, visibility 260ms ease;
+}
+
+.loading-screen span {
+  color: var(--accent);
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 0.95rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  animation: pulse 1.2s infinite ease-in-out;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 650ms ease, transform 650ms ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(10px);
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.orb-one {
+  width: 18rem;
+  height: 18rem;
+  right: -5rem;
+  top: -3rem;
+  background: radial-gradient(circle, rgba(89,242,194,0.2), transparent 70%);
+  animation: float 6s ease-in-out infinite;
+}
+
+.orb-two {
+  width: 14rem;
+  height: 14rem;
+  left: -3rem;
+  bottom: 3rem;
+  background: radial-gradient(circle, rgba(65,168,245,0.18), transparent 70%);
+  animation: float 8s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%,100% { transform: translate3d(0,0,0); }
+  50% { transform: translate3d(0,12px,0); }
+}
+
+@keyframes pulse {
+  0%,100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}

@@ -1,0 +1,117 @@
+:root {
+  --bg: #060816;
+  --bg-soft: #0c1226;
+  --panel: rgba(10, 16, 32, 0.86);
+  --border: rgba(255,255,255,0.11);
+  --text: #eef3ff;
+  --muted: #94a3b8;
+  --accent: #59f2c2;
+  --accent-strong: #41a8f5;
+  --accent-warm: #ff9966;
+  --shadow: 0 20px 50px rgba(0,0,0,0.22);
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(89,242,194,0.16), transparent 35%),
+    linear-gradient(135deg, var(--bg), #0a1020 70%);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+body.loaded .loading-screen { opacity: 0; visibility: hidden; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+button, input, textarea { font: inherit; }
+
+.container {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+section {
+  padding: 5.5rem 0;
+  position: relative;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(89,242,194,0.1);
+  border: 1px solid rgba(89,242,194,0.2);
+  color: var(--accent);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin-bottom: 1.2rem;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0.7rem var(--accent);
+}
+
+.section-title {
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  line-height: 1.15;
+  margin: 0 0 0.9rem;
+  font-weight: 700;
+}
+
+.section-title span { color: var(--accent); }
+
+.section-copy {
+  color: var(--muted);
+  font-size: 1.02rem;
+  max-width: 680px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(28px);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+@media (max-width: 720px) {
+  section { padding: 4.25rem 0; }
+}
